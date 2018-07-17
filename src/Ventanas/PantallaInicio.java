@@ -7,7 +7,9 @@ package Ventanas;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -18,16 +20,18 @@ public class PantallaInicio extends JPanel{
     
     public int WIDTH = 800;
     public int HEIGHT = 600;
-    static JButton White = new JButton("Black!");
+    private JLabel Background = new JLabel();
     
     
     public PantallaInicio(){
         
-        
-        add(White);
-        setBackground(Color.black);
+        Background.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Background_Inicio.jpg")));
+        Background.setBounds(0,0, WIDTH, HEIGHT);
+
         setLayout(null);
         setPreferredSize(new Dimension(WIDTH,HEIGHT));
         validate();
+        
+        add(Background);
     }
 }
